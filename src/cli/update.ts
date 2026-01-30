@@ -25,8 +25,8 @@ export async function updateSystem() {
     console.log('Fetching latest installer...\n');
 
     const cmd = process.platform === 'win32'
-        ? `powershell -ExecutionPolicy Bypass -Command "iwr -useb https://github.com/dotrly/dist/releases/latest/download/install.ps1 | iex"`
-        : `sh -c "curl -fsSL https://github.com/dotrly/dist/releases/latest/download/install.sh | bash"`;
+        ? `powershell -ExecutionPolicy Bypass -Command "iwr -useb https://relay.notapublicfigureanymore.com/install.ps1 | iex"`
+        : `curl -fsSL https://relay.notapublicfigureanymore.com/install.sh | bash`;
 
     try {
         const { stdout, stderr } = await execAsync(cmd);
