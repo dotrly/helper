@@ -16,14 +16,15 @@ export async function showHelp() {
         { name: 'create-app <name>', description: 'Create a new Relay App', category: 'App' },
         { name: 'build', description: 'Build the current App', category: 'App' },
         { name: 'install [file]', description: 'Install a .rly app bundle', category: 'App' },
+        { name: 'uninstall <id>', description: 'Remove a specific Relay app', category: 'App' },
+        { name: 'publish', description: 'Package and publish the current app', category: 'App' },
         { name: 'apps', description: 'List installed apps', category: 'App' },
 
         // Automatically aggregated from modules
-        doctor.metadata,
+        { name: 'doctor', description: 'Analyze system or remove Relay (doctor uninstall)', category: 'System' },
         { name: 'pair', description: 'Pair a mobile device', category: 'System' },
         { name: 'sdk <subcommand>', description: 'Configure SDK settings', category: 'System' },
-        update.metadata,
-        uninstall.metadata
+        update.metadata
     ];
 
     // Check for updates
