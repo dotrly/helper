@@ -28,4 +28,4 @@ You can extend the bridge's capabilities or contribute fixes by running your loc
 
 ## License
 
-MIT
+GNU Affero General Public License v3.0
