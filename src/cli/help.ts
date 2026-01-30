@@ -3,7 +3,7 @@ import * as doctor from './doctor.js';
 import * as update from './update.js';
 import * as uninstall from './uninstall.js';
 
-export async function showHelp() {
+export async function showHelp(currentVersion?: string) {
     const commands = [
         // Engine Commands (Manual entries as they are private)
         { name: 'start', description: 'Start the Helper Server (daemon mode)', category: 'Engine' },
@@ -28,8 +28,8 @@ export async function showHelp() {
     ];
 
     // Check for updates
-    const currentVersion = 'v0.4.6'; // Will be injected or passed later
-    const newVersion = await update.checkUpdate(currentVersion);
+    const versionToCheck = currentVersion || 'v0.0.0';
+    const newVersion = await update.checkUpdate(versionToCheck);
     if (newVersion) {
         console.log(`\n\x1b[33m✨ A new version of Relay is available: v${newVersion}\x1b[0m`);
         console.log(`\x1b[33m   Run 'relay update' to install it.\x1b[0m`);
