@@ -20,6 +20,14 @@ We welcome contributions in the following areas:
 - **Bug Fixes**: Improving the stability of the bridge.
 - **Documentation**: Improving this guide or the README.
 
+## Developer Documentation
+
+To aid in your development process, please refer to our internal guides:
+
+- **[Internal Architecture](./docs/index.md)**: Details on CLI logic, server structure, and the logic-engine bridge.
+- **[API Usage Guide](./usage/index.md)**: A categorized guide for **Clips** and **SDK** developers on how to interact with the Helper API.
+- **[CLI Reference](./docs/cli/help.md)**: Documentation for available commands and decentralized metadata.
+
 ## Local Development
 
 To test your changes, you must "bridge" this logic into your existing Relay installation:
