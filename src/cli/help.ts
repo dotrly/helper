@@ -1,5 +1,7 @@
 import { COLORS } from '../lib/constants.js';
 import * as doctor from './doctor.js';
+import * as update from './update.js';
+import * as uninstall from './uninstall.js';
 
 export async function showHelp() {
     const commands = [
@@ -19,8 +21,18 @@ export async function showHelp() {
         // Automatically aggregated from modules
         doctor.metadata,
         { name: 'pair', description: 'Pair a mobile device', category: 'System' },
-        { name: 'sdk <subcommand>', description: 'Configure SDK settings', category: 'System' }
+        { name: 'sdk <subcommand>', description: 'Configure SDK settings', category: 'System' },
+        update.metadata,
+        uninstall.metadata
     ];
+
+    // Check for updates
+    const currentVersion = 'v0.4.6'; // Will be injected or passed later
+    const newVersion = await update.checkUpdate(currentVersion);
+    if (newVersion) {
+        console.log(`\n\x1b[33m✨ A new version of Relay is available: v${newVersion}\x1b[0m`);
+        console.log(`\x1b[33m   Run 'relay update' to install it.\x1b[0m`);
+    }
 
     console.log(`\n${COLORS.PRIMARY}─── Relay CLI Help ───────────────────────────────────────────${COLORS.RESET}`);
     console.log('Usage: relay <command> [args]\n');

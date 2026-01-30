@@ -8,7 +8,10 @@ The codebase is organized into functional modules located in the `src/` director
 
 ### 1. `src/cli/`
 This directory contains all command-line interface logic. Each file should correspond to a specific command or a related set of sub-commands.
-- **Example**: `doctor.ts` implements the `relay doctor` command.
+- **`doctor.ts`**: Implements the `relay doctor` command for system diagnostics.
+- **`help.ts`**: Implements the `relay help` command, providing a dynamic menu of available bridge operations.
+- **`update.ts`**: Implements `relay update` for self-updating the application.
+- **`uninstall.ts`**: Implements `relay uninstall` for complete removal of the application.
 - **Convention**: Export an async function that performs the action. The function name in `index.ts` determines the CLI command name.
 
 ### 2. `src/server/`
