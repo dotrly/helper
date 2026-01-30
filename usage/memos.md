@@ -32,7 +32,7 @@ Retrieves all stored snippets.
 {
   "memos": [
     "Call the team for the standup.",
-    "Order more coffee ☕️"
+    "Order more coffee"
   ]
 }
 ```

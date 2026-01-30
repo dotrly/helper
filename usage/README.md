@@ -13,10 +13,10 @@ This directory contains guides for interacting with the Relay Helper API.
 
 | Guide | Description |
 | :--- | :--- |
-| [🚀 Overview](./index.md) | Base URL and getting started steps. |
-| [💻 System](./system.md) | Diagnostics, CPU, and Memory metrics. |
-| [📝 Memos](./memos.md) | How to use the volatile state storage. |
-| [🔒 Reserved](./reserved.md) | Routes managed by the Engine (Avoid these!). |
+| [Overview](./index.md) | Base URL and getting started steps. |
+| [System](./system.md) | Diagnostics, CPU, and Memory metrics. |
+| [Memos](./memos.md) | How to use the volatile state storage. |
+| [Reserved](./reserved.md) | Routes managed by the Engine (Avoid these!). |
 
 > [!TIP]
 > Use `relay status` in the CLI to verify if the server is currently running before making API calls.

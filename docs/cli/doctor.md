@@ -13,4 +13,4 @@ The `doctor` command is a diagnostic tool designed to validate the local environ
 - `metadata`: Contains description and category for the automated help system.
 
 ## Style
-Uses purple borders and status icons (✓, ⚠, ✗) to provide a premium terminal experience.
+Uses purple borders and status icons (V, !, X) to provide a premium terminal experience.

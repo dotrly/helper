@@ -56,4 +56,4 @@ We use [Conventional Commits](https://www.conventionalcommits.org/). Please titl
 - **Testing**: Mention that you've verified the change using `relay attach`.
 
 ## License
-By contributing to this repository, you agree that your contributions will be licensed under the MIT License.
+By contributing to this repository, you agree that your contributions will be licensed under the GNU Affero General Public License v3.0 (AGPL-3.0).
