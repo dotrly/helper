@@ -20,7 +20,5 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
----
-
 Important Advisory
 This software is the logic layer for the Relay Helper. Successful execution requires a compatible Relay Engine binary. While this source code is open, the Relay Engine binary remains subject to its own proprietary license for security and integrity reasons.
