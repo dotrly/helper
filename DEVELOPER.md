@@ -1,23 +1,25 @@
 # Developer Guide
 
-## System Components
+## System Architecture
 
-### The Engine
-The Relay Engine is a pre-compiled binary responsible for:
-*   Process management
-*   Secure file system access
-*   Cryptographic signing
-*   Auto-updates
+Relay is built on a split architecture that prioritizes security and performance.
 
-### The Helper (This Repo)
-The Helper contains the logic that runs *inside* the Engine's context. It includes:
-*   **CLI**: Command definitions (e.g., `doctor`, `create-app`).
-*   **Server**: The local HTTP/WebSocket server endpoints.
+### The Relay Engine (Private)
+A signed binary that serves as the "Host". It handles:
+*   **Process Management**: Running and monitoring background services.
+*   **Secure Access**: Permission-gated file system and shell interactions.
+*   **Bridge Networking**: Secure, local-only communication between devices.
 
-## Runtime Injection
+### The Relay Helper (This Repo)
+The logic layer that runs inside the Engine. It defines the "Intelligence" of the bridge:
+*   **CLI Definitions**: Professional tools like `doctor`, `apps`, and `create-app`.
+*   **Server Endpoints**: The Hono-based API that the mobile app interacts with to control the machine.
 
-When running in `attach` mode, the Engine injects several global objects and environment variables into the process:
-*   `RELAY_SECURE_CONTEXT`: Provides access to privileged APIs.
-*   `process.env`: Populated with installation paths and configuration.
+## The 'Attach' Protocol
 
-Do not attempt to shim or mock these in production code; rely on the Engine to provide them.
+Successful contribution relies on the `relay attach` protocol. When the Engine enters "Attach Mode", it:
+1.  Locates the local `package.json` and `dist/index.js`.
+2.  Redirects all internal command calls to the local logic.
+3.  Injects the necessary secure environment variables for local testing.
+
+This allows the community to build open-source "Clips" and Helper logic while maintaining the security of the core engine.

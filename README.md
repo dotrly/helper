@@ -1,26 +1,30 @@
 # Relay Helper
 
-The open-source logic for the Relay Helper.
+The open-source logic layer for the Relay platform.
 
-This repository contains the command-line interface, server routes, and business logic that powers the Relay Helper. While the core runtime engine is proprietary, this entire logic layer is open source and community-driven.
+Relay is a thin, lightweight window into your most powerful machines. This repository contains the command-line interface, server routes, and business logic that power the Relay Helper—the bridge between your mobile device and your desktop or cloud infrastructure.
 
-## Architecture
+## Our Philosophy
 
-Relay operates on a "Open Logic, Secure Engine" model:
-*   **The Engine**: A proprietary, signed binary that handles secure system operations, file access, and updates.
-*   **The Helper (This Repo)**: The TypeScript source code that defines commands and application behavior.
+We believe your phone should be a window into your computing power, not a standalone silo. This repository enables the "Professional Tools" and "Unlimited Power" promised by the Relay experience by providing the logic for managing files, running local AI models, and controlling system services.
+
+## Why the Binary is Signed
+
+To ensure the integrity and security of the "Thin Window" bridge, the core Relay Engine is distributed as a signed binary. This architecture prevents the distribution of modified or compromised engines, ensuring your data stays private and secure between your devices—never touching a public cloud.
+
+The logic that runs *within* this secure environment is fully open source here. You are encouraged to inspect, modify, and contribute to the bridge's capabilities.
 
 ## Usage
 
-This package is not designed to be run standalone. It is loaded by the Relay Engine.
+This package is intended to be loaded by the Relay Engine.
 
 ### Development
 
-To contribute commands or fix bugs, you can run your local version of this logic on top of your installed Relay Engine.
+You can extend the bridge's capabilities or contribute fixes by running your local version of this logic on top of your installed Relay Engine.
 
-1.  Clone this repository.
-2.  Run `relay attach` in this directory.
-3.   The Relay Engine will hot-swap its internal logic with your local code.
+1.  **Clone** this repository.
+2.  **Attach**: Run `relay attach` in this directory.
+3.  **Test**: The Relay Engine will hot-swap its internal logic with your local code in real-time.
 
 ## License
 

@@ -5,37 +5,39 @@ import os from 'os';
 const execAsync = promisify(exec);
 
 export async function checkSystem() {
-    console.log('\x1b[34m[relay-doctor]\x1b[0m Analyzing environment...');
+    console.log('\n\x1b[35m─── Relay Doctor ──────────────────────────────────────────────\x1b[0m');
+    console.log('Validating your environment for the Thin Window bridge...\n');
 
     const stats = {
         os: `${os.type()} ${os.release()}`,
         arch: os.arch(),
-        memory: `${(os.freemem() / 1024 / 1024 / 1024).toFixed(1)}GB free of ${(os.totalmem() / 1024 / 1024 / 1024).toFixed(1)}GB`,
+        memory: `${(os.freemem() / 1024 / 1024 / 1024).toFixed(1)}GB free / ${(os.totalmem() / 1024 / 1024 / 1024).toFixed(1)}GB total`,
         node: process.version
     };
 
-    console.log(`- OS: ${stats.os}`);
-    console.log(`- Arch: ${stats.arch}`);
-    console.log(`- Memory: ${stats.memory}`);
-    console.log(`- Node: ${stats.node}`);
+    console.log(`  \x1b[37mSystem:\x1b[0m      ${stats.os} (${stats.arch})`);
+    console.log(`  \x1b[37mMemory:\x1b[0m      ${stats.memory}`);
+    console.log(`  \x1b[37mNode:\x1b[0m        ${stats.node}`);
 
     // Check Ollama
     try {
         const res = await fetch('http://localhost:11434/api/tags');
         if (res.ok) {
-            console.log('\x1b[32m✓\x1b[0m Ollama is running');
+            console.log('  \x1b[32m✓ Ollama:\x1b[0m    Running (Local AI enabled)');
         } else {
-            console.log('\x1b[31m✗\x1b[0m Ollama is responding but not ok');
+            console.log('  \x1b[31m✗ Ollama:\x1b[0m    Responding but unexpected status');
         }
     } catch (e) {
-        console.log('\x1b[33m⚠\x1b[0m Ollama is NOT running (Local AI features disabled)');
+        console.log('  \x1b[33m⚠ Ollama:\x1b[0m    Not running (AI features disabled)');
     }
 
     // Check Git
     try {
         await execAsync('git --version');
-        console.log('\x1b[32m✓\x1b[0m Git is installed');
+        console.log('  \x1b[32m✓ Git:\x1b[0m       Installed (Templates available)');
     } catch (e) {
-        console.log('\x1b[31m✗\x1b[0m Git is NOT installed (Required for templates)');
+        console.log('  \x1b[31m✗ Git:\x1b[0m       Not installed (App creation will fail)');
     }
+
+    console.log('\n\x1b[35m───────────────────────────────────────────────────────────────\x1b[0m\n');
 }
