@@ -22,5 +22,5 @@ SOFTWARE.
 
 ---
 
-### Important Advisory
+Important Advisory
 This software is the logic layer for the Relay Helper. Successful execution requires a compatible Relay Engine binary. While this source code is open, the Relay Engine binary remains subject to its own proprietary license for security and integrity reasons.

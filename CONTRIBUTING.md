@@ -4,7 +4,7 @@ First off, thank you for considering contributing to Relay! It's people like you
 
 ---
 
-### ⚡️ TL;DR
+### TL;DR
 1. **Fork** the repo and create your branch from `main`.
 2. **Attach** your local code to your Relay Engine using `relay attach`.
 3. **Commit** using conventional messages (e.g., `feat: add disk check to doctor`).
@@ -12,7 +12,7 @@ First off, thank you for considering contributing to Relay! It's people like you
 
 ---
 
-## 🏗 How to Contribute
+## How to Contribute
 
 We welcome contributions in the following areas:
 - **CLI Tools**: New commands for the `relay` CLI.
@@ -20,7 +20,7 @@ We welcome contributions in the following areas:
 - **Bug Fixes**: Improving the stability of the bridge.
 - **Documentation**: Improving this guide or the README.
 
-## 🛠 Local Development
+## Local Development
 
 To test your changes, you must "bridge" this logic into your existing Relay installation:
 
@@ -28,7 +28,7 @@ To test your changes, you must "bridge" this logic into your existing Relay inst
 2. **Start Dev Mode**: Run `relay attach` in the root of this repo.
 3. **Verify**: Your Relay binary will now use your local code. Run `relay doctor` to see it in action.
 
-## 📝 Pull Request Guidelines
+## Pull Request Guidelines
 
 ### 1. Branching
 Create a feature branch for your work:
@@ -47,5 +47,5 @@ We use [Conventional Commits](https://www.conventionalcommits.org/). Please titl
 - **Description**: Explain *why* the change is necessary and *what* it accomplishes.
 - **Testing**: Mention that you've verified the change using `relay attach`.
 
-## ⚖️ License
+## License
 By contributing to this repository, you agree that your contributions will be licensed under the MIT License.
