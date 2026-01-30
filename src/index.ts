@@ -14,6 +14,6 @@ export default {
     server,
     metadata: {
         name: "Relay Helper",
-        version: "0.1.0" // Linked to package.json in build
+        version: "0.1.0"
     }
 };
