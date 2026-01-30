@@ -1,25 +1,22 @@
-# Contributing to Relay Helper
+# Contributing
 
-Thank you for your interest in contributing! We want to make Relay the best tool for local AI development.
+We welcome contributions to the Relay Helper. This repository defines the behavior of the CLI and local server.
 
-## How it Works
+## Philosophy
 
-The Relay architecture uses a **"Proprietary Engine, Open Extensions"** model.
-- **The Engine**: Defines the secure runtime, file access, and API signing.
-- **The Extensions (This Repo)**: Defines the actual commands and logic.
+Relay is designed to be minimal, fast, and secure.
+*   **No Bloat**: Features should be essential.
+*   **Performance**: Logic should be optimized for start-up time.
+*   **Type Safety**: All code must be written in strict TypeScript.
 
-When you contribute here, your code is bundled into the next official release of Relay.
+## Development Process
 
-## Development Workflow
+1.  **Environment**: You need the Relay Runtime installed on your machine.
+2.  **Attach Mode**: Run `relay attach` in the root of this repository. This instructs the installed Relay binary to load source code from the current directory.
+3.  **Testing**: Verify your changes by running Relay commands in a separate terminal. The attached process will log activity.
 
-1.  **Fork & Clone**
-2.  **Attach**: Run `relay attach` in the root of this repo.
-3.  **Code**: Add your new command in `src/cli/my-command.ts`.
-4.  **Register**: Export it in `src/index.ts`.
-5.  **Test**: Run `relay my-command` (while attached).
-6.  **PR**: Submit your Pull Request!
+## Pull Requests
 
-## Guidelines
-- Keep dependencies minimal.
-- Use TypeScript.
-- Respect the existing code style.
+*   Ensure your code passes the build.
+*   Follow existing patterns in `src/cli` and `src/server`.
+*   Keep dependencies to a minimum.

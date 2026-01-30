@@ -1,16 +1,23 @@
 # Developer Guide
 
-## Architecture
+## System Components
 
-Relay is composed of two parts:
-1.  **Core Binary (Engine)**: Handles the low-level system operations, security, and updates.
-2.  **Extensions (This Repo)**: Handles the high-level business logic.
+### The Engine
+The Relay Engine is a pre-compiled binary responsible for:
+*   Process management
+*   Secure file system access
+*   Cryptographic signing
+*   Auto-updates
 
-### The `relay attach` Protocol
+### The Helper (This Repo)
+The Helper contains the logic that runs *inside* the Engine's context. It includes:
+*   **CLI**: Command definitions (e.g., `doctor`, `create-app`).
+*   **Server**: The local HTTP/WebSocket server endpoints.
 
-When you run `relay attach`, the binary looks for a `package.json` in the current directory. If it finds one with a valid structure, it:
-1.  Spawns a child process running `npm run dev` in your directory.
-2.  Proxies all CLI commands and API requests to your local process.
-3.  Injects the `RELAY_SECURE_CONTEXT` environment variables so your code can access protected APIs.
+## Runtime Injection
 
-This allows you to develop "inside" the engine without having access to the engine's source code.
+When running in `attach` mode, the Engine injects several global objects and environment variables into the process:
+*   `RELAY_SECURE_CONTEXT`: Provides access to privileged APIs.
+*   `process.env`: Populated with installation paths and configuration.
+
+Do not attempt to shim or mock these in production code; rely on the Engine to provide them.

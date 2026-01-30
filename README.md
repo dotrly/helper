@@ -1,39 +1,27 @@
-# Relay Helper Extensions
+# Relay Helper
 
-<p align="center">
-  <img src="https://relay.notapublicfigureanymore.com/assets/logo.png" alt="Relay Logo" width="120" />
-</p>
+The open-source logic for the Relay Helper.
 
-Welcome to the **Relay Helper Extensions** repository. This is where the community can contribute new features, commands, and logic to the Relay CLI.
+This repository contains the command-line interface, server routes, and business logic that powers the Relay Helper. While the core runtime engine is proprietary, this entire logic layer is open source and community-driven.
 
-## 🚀 Features
+## Architecture
 
-Currently, this repository provides:
-- **`relay doctor`**: A diagnostic tool to check your environment (Ollama, Git, Node.js status).
+Relay operates on a "Open Logic, Secure Engine" model:
+*   **The Engine**: A proprietary, signed binary that handles secure system operations, file access, and updates.
+*   **The Helper (This Repo)**: The TypeScript source code that defines commands and application behavior.
 
-## 🛠 Contributing
+## Usage
 
-We love contributions! Since the core Relay Engine is a signed binary, we have a special workflow that allows you to develop and test changes locally using your existing Relay installation.
+This package is not designed to be run standalone. It is loaded by the Relay Engine.
 
-### Quick Start
+### Development
 
-1.  **Clone this repo**:
-    ```bash
-    git clone https://github.com/dotrly/helper.git
-    cd helper
-    ```
+To contribute commands or fix bugs, you can run your local version of this logic on top of your installed Relay Engine.
 
-2.  **Install Dependencies**:
-    ```bash
-    npm install
-    ```
+1.  Clone this repository.
+2.  Run `relay attach` in this directory.
+3.   The Relay Engine will hot-swap its internal logic with your local code.
 
-3.  **Run in Dev Mode**:
-    ```bash
-    relay attach
-    ```
-    This command tells your installed Relay binary to **hot-swap** its internal logic with the code in this directory. You can now test your changes in real-time!
+## License
 
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT

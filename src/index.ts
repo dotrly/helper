@@ -13,7 +13,7 @@ export default {
     cli,
     server,
     metadata: {
-        name: "Relay Official Extension",
-        version: "0.1.0"
+        name: "Relay Helper",
+        version: "0.1.0" // Linked to package.json in build
     }
 };

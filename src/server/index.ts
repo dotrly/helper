@@ -25,5 +25,16 @@ export async function createRelayServer() {
         return c.json(getSystemStats());
     });
 
+    // Example: Simple Memo Store
+    const memos: string[] = [];
+
+    app.post('/api/memo', async (c) => {
+        const { text } = await c.req.json();
+        memos.push(text);
+        return c.json({ success: true, count: memos.length });
+    });
+
+    app.get('/api/memo', (c) => c.json({ memos }));
+
     return app;
 }
