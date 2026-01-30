@@ -10,6 +10,13 @@ export const SYSTEM_ENDPOINTS = {
     CONFIG: '/api/config'
 };
 
+export interface CommandMetadata {
+    name: string;
+    description: string;
+    usage?: string;
+    category: 'Engine' | 'App' | 'System';
+}
+
 export const COLORS = {
     PRIMARY: '\x1b[35m', // Purple
     SUCCESS: '\x1b[32m', // Green

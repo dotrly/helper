@@ -1,8 +1,14 @@
-import { checkSystem } from './cli/doctor.js';
+import * as doctor from './cli/doctor.js';
+import * as help from './cli/help.js';
 import { createRelayServer } from './server/index.js';
 
 export const cli = {
-    doctor: checkSystem
+    doctor: doctor.checkSystem,
+    help: help.showHelp,
+    _meta: {
+        doctor: doctor.metadata,
+        help: help.metadata
+    }
 };
 
 export const server = {

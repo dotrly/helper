@@ -41,3 +41,9 @@ export async function checkSystem() {
 
     console.log('\n\x1b[35m───────────────────────────────────────────────────────────────\x1b[0m\n');
 }
+
+export const metadata = {
+    name: 'doctor',
+    description: 'Analyze the bridge environment and local AI status',
+    category: 'System'
+};
