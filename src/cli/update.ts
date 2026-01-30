@@ -26,7 +26,7 @@ export async function updateSystem() {
 
     const cmd = process.platform === 'win32'
         ? `powershell -ExecutionPolicy Bypass -Command "iwr -useb https://github.com/dotrly/dist/releases/latest/download/install.ps1 | iex"`
-        : `curl -fsSL https://github.com/dotrly/dist/releases/latest/download/install.sh | bash`;
+        : `sh -c "curl -fsSL https://github.com/dotrly/dist/releases/latest/download/install.sh | bash"`;
 
     try {
         const { stdout, stderr } = await execAsync(cmd);
