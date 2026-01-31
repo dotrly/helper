@@ -1,6 +1,6 @@
 {
     "name": "@dotrly/helper",
-    "version": "0.1.25",
+    "version": "0.1.26",
     "description": "Public logic and commands for the Relay Helper.",
     "type": "module",
     "main": "./dist/index.js",
