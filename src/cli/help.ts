@@ -23,6 +23,7 @@ export async function showHelp(currentVersion?: string) {
         // Automatically aggregated from modules
         { name: 'doctor', description: 'Analyze system or remove Relay (doctor uninstall)', category: 'System' },
         { name: 'pair', description: 'Pair a mobile device', category: 'System' },
+        { name: 'dev init', description: 'Create developer signing profile', category: 'System' },
         { name: 'sdk <subcommand>', description: 'Configure SDK settings', category: 'System' },
         update.metadata
     ];
