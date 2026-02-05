@@ -1,6 +1,6 @@
 {
     "name": "@dotrly/helper",
-    "version": "0.1.105",
+    "version": "0.1.106",
     "description": "Public logic and commands for the Relay Helper.",
     "type": "module",
     "main": "./dist/index.js",
@@ -10,7 +10,7 @@
         "start": "relay attach"
     },
     "dependencies": {
-        "@dotrly/sdk": "^0.2.1",
+        "@dotrly/sdk": "^0.2.6",
         "hono": "^4.11.7"
     },
     "devDependencies": {
