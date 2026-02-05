@@ -35,7 +35,7 @@ export async function showHelp(currentVersion?: string) {
         console.log(`\x1b[33m   Run 'relay update' to install it.\x1b[0m`);
     }
 
-    console.log(`\n${COLORS.PRIMARY}─── Relay CLI Help ───────────────────────────────────────────${COLORS.RESET}`);
+    console.log(`\n${COLORS.PRIMARY}─── Relay Helper CLI ─────────────────────────────────────────${COLORS.RESET}`);
     console.log('Usage: relay <command> [args]\n');
 
     const categories = ['Engine', 'App', 'System'];
@@ -52,7 +52,7 @@ export async function showHelp(currentVersion?: string) {
     });
 
     console.log(`${COLORS.PRIMARY}───────────────────────────────────────────────────────────────${COLORS.RESET}`);
-    console.log('Building the bridge for professional tools.\n');
+    console.log('Relay Helper CLI\n');
 }
 
 export const metadata = {
