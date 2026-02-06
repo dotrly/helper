@@ -13,7 +13,7 @@ The `update` command allows the Relay Helper to self-update by fetching and runn
 - `metadata`: Contains description and category for the automated help system.
 
 ## Update Flow
-1. Check GitHub repository (`dotrly/dist`) for the latest release tag.
+1. Check GitHub repository (`dotrly/releases`) for the latest release tag.
 2. Compare the latest tag with the current version.
 3. If an update is available, download the installer from the Relay distribution server.
 4. Execute the installer with appropriate permissions.

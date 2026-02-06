@@ -1,11 +1,12 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
+import { PROJECT_DOMAINS } from '../../../../project.domains';
 
 const execAsync = promisify(exec);
 
 export async function checkUpdate(currentVersion: string) {
     try {
-        const res = await fetch('https://api.github.com/repos/dotrly/dist/releases/latest');
+        const res = await fetch(`https://api.github.com/repos/${PROJECT_DOMAINS.releasesRepo}/releases/latest`);
         if (!res.ok) return null;
 
         const data = (await res.json()) as { tag_name: string };
@@ -24,8 +25,8 @@ export async function updateSystem() {
     console.log('\n\x1b[36m─── Relay Update ──────────────────────────────────────────────\x1b[0m');
     console.log('Fetching latest installer...\n');
 
-    const updateUrlUnix = process.env.RELAY_UPDATE_URL_UNIX || 'https://relay.notapublicfigureanymore.com/install.sh';
-    const updateUrlWin = process.env.RELAY_UPDATE_URL_WIN || 'https://relay.notapublicfigureanymore.com/install.ps1';
+    const updateUrlUnix = process.env.RELAY_UPDATE_URL_UNIX || `${PROJECT_DOMAINS.installBaseUrl}/install.sh`;
+    const updateUrlWin = process.env.RELAY_UPDATE_URL_WIN || `${PROJECT_DOMAINS.installBaseUrl}/install.ps1`;
 
     const cmd = process.platform === 'win32'
         ? `powershell -ExecutionPolicy Bypass -Command "iwr -useb ${updateUrlWin} | iex"`
