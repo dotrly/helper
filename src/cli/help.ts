@@ -19,6 +19,7 @@ export async function showHelp(currentVersion?: string) {
         { name: 'uninstall <id>', description: 'Remove a specific Relay app', category: 'App' },
         { name: 'publish', description: 'Package and publish the current app', category: 'App' },
         { name: 'apps', description: 'List installed apps', category: 'App' },
+        { name: 'view <id> [--native]', description: 'Open runtime view URL or native window', category: 'App' },
 
         // Automatically aggregated from modules
         { name: 'doctor', description: 'Analyze system or remove Relay (doctor uninstall)', category: 'System' },
